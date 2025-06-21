@@ -4,6 +4,8 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    container:
+      image: python:3.13.5-alpine
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
