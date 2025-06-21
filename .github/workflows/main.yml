@@ -1,0 +1,18 @@
+name: Test Container
+on:
+  workflow_dispatch:
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check python version
+        run: python3 --version
+
+      - name: Install alpine curl
+        run: apk add curl
+
+      - name: Execute curl command
+        run: curl https://www.google.com
